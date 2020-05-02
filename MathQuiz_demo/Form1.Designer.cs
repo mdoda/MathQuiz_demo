@@ -41,12 +41,12 @@
             this.minusRightLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.minusLeftLabel = new System.Windows.Forms.Label();
-            this.multiplication = new System.Windows.Forms.NumericUpDown();
+            this.product = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.timesRightLabel = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.timesLeftLabel = new System.Windows.Forms.Label();
-            this.product = new System.Windows.Forms.NumericUpDown();
+            this.quotient = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.dividedRightLabel = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -55,8 +55,8 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.sum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.difference)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.multiplication)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.product)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quotient)).BeginInit();
             this.SuspendLayout();
             // 
             // timeLabel
@@ -176,14 +176,14 @@
             this.minusLeftLabel.Text = "?";
             this.minusLeftLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // multiplication
+            // product
             // 
-            this.multiplication.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.multiplication.Location = new System.Drawing.Point(328, 195);
-            this.multiplication.Name = "multiplication";
-            this.multiplication.Size = new System.Drawing.Size(100, 41);
-            this.multiplication.TabIndex = 16;
-            this.multiplication.Enter += new System.EventHandler(this.answer_Enter);
+            this.product.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.product.Location = new System.Drawing.Point(328, 195);
+            this.product.Name = "product";
+            this.product.Size = new System.Drawing.Size(100, 41);
+            this.product.TabIndex = 16;
+            this.product.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label8
             // 
@@ -225,14 +225,14 @@
             this.timesLeftLabel.Text = "?";
             this.timesLeftLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // product
+            // quotient
             // 
-            this.product.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.product.Location = new System.Drawing.Point(328, 251);
-            this.product.Name = "product";
-            this.product.Size = new System.Drawing.Size(100, 41);
-            this.product.TabIndex = 21;
-            this.product.Enter += new System.EventHandler(this.answer_Enter);
+            this.quotient.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quotient.Location = new System.Drawing.Point(328, 251);
+            this.quotient.Name = "quotient";
+            this.quotient.Size = new System.Drawing.Size(100, 41);
+            this.quotient.TabIndex = 21;
+            this.quotient.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label12
             // 
@@ -297,12 +297,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(482, 353);
             this.Controls.Add(this.startButton);
-            this.Controls.Add(this.product);
+            this.Controls.Add(this.quotient);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.dividedRightLabel);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.dividedLeftLabel);
-            this.Controls.Add(this.multiplication);
+            this.Controls.Add(this.product);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.timesRightLabel);
             this.Controls.Add(this.label10);
@@ -326,8 +326,8 @@
             this.Enter += new System.EventHandler(this.answer_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.sum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.difference)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.multiplication)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.product)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quotient)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,12 +347,12 @@
         private System.Windows.Forms.Label minusRightLabel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label minusLeftLabel;
-        private System.Windows.Forms.NumericUpDown multiplication;
+        private System.Windows.Forms.NumericUpDown product;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label timesRightLabel;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label timesLeftLabel;
-        private System.Windows.Forms.NumericUpDown product;
+        private System.Windows.Forms.NumericUpDown quotient;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label dividedRightLabel;
         private System.Windows.Forms.Label label14;

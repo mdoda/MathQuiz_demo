@@ -32,11 +32,16 @@ namespace MathQuiz_demo
         int multiplicand;
         int multiplier;
 
+        // These integer variables store the numbers 
+        // for the division problem. 
+        int dividend;
+        int divisor;
+
         // This integer variable keeps track of the 
         // remaining time.
         int timeLeft; 
 
-        /// <summary>
+        /// <summary> 
         /// Start the quiz by filling in all of the problems
         /// and starting the timer.
         /// </summary>
@@ -57,10 +62,30 @@ namespace MathQuiz_demo
             // Fill in the subtraction problem.
             minuend    = randomizer.Next(1, 101);
             subtrahend = randomizer.Next(1, minuend);
+
+            // Convert the two randomly generated numbers
+            // into strings so that they can be displayed
+            // in the label controls.
             minusLeftLabel.Text = minuend.ToString();
             minusRightLabel.Text = subtrahend.ToString();
+
+            // 'differnece' is the name of the NumericUpDown control
             difference.Value = 0;
 
+            // Fill in the multiplication problem.
+            multiplicand = randomizer.Next(2,11);
+            multiplier = randomizer.Next(2,11);
+            timesLeftLabel.Text = multiplicand.ToString();
+            timesRightLabel.Text = multiplier.ToString();
+            product.Value = 0;
+
+            // Fill in the division problem.
+            divisor = randomizer.Next(2,11);
+            int temporaryQuotient = randomizer.Next(2, 11);
+            dividend = divisor * temporaryQuotient;
+            dividedLeftLabel.Text = dividend.ToString();
+            dividedRightLabel.Text = divisor.ToString();
+            quotient.Value = 0;
 
             // 'sum' is the name of the NumericUpDown control.
             // This step makes sure its value is zero before
@@ -121,6 +146,8 @@ namespace MathQuiz_demo
                 MessageBox.Show("You didn't finish in time.", "Sorry!");
                 sum.Value = addend1 + addend2;
                 difference.Value = minuend - subtrahend;
+                product.Value = multiplicand * multiplier;
+                quotient.Value = dividend / divisor;
                 startButton.Enabled = true;
             }
         }
@@ -131,8 +158,10 @@ namespace MathQuiz_demo
         /// <returns>True if the answer's correct, false otherwise.</returns>
         private bool CheckTheAnswer()
         {
-            if (addend1 + addend2 == sum.Value 
-                && minuend - subtrahend == difference.Value)
+            if ((addend1 + addend2 == sum.Value)
+                 && (minuend - subtrahend == difference.Value)
+                 && (multiplicand * multiplier == product.Value)
+                 && (dividend / divisor == quotient.Value))
                 return true;
             else
                 return false;
@@ -149,5 +178,7 @@ namespace MathQuiz_demo
                 answerBox.Select(0, lengthOfAnswer);
             }
         }
+
+
     }
 }
