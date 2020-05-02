@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -100,6 +101,7 @@ namespace MathQuiz_demo
 
         private void StartButton_Click(object sender, EventArgs e)
         {
+            timeLabel.BackColor = Color.White;
             StartTheQuiz();
             startButton.Enabled = false;
         }
@@ -120,6 +122,7 @@ namespace MathQuiz_demo
                 MessageBox.Show("You got all the answers right!",
                 "Congratulations!");
                 startButton.Enabled = true;
+
             }
             else if(timeLeft > 0)
             {
@@ -129,13 +132,8 @@ namespace MathQuiz_demo
                 // Time Left label.
                 timeLeft--;
                 timeLabel.Text = timeLeft + " seconds";
-            }
-            if (timeLeft > 0)
-            {
-                // Display the new time left
-                // by updating the Time Left label.
-                timeLeft = timeLeft - 1;
-                timeLabel.Text = timeLeft + " seconds";
+                if (timeLeft == 5)
+                    timeLabel.BackColor = Color.Red;
             }
             else
             {
@@ -179,6 +177,46 @@ namespace MathQuiz_demo
             }
         }
 
+        private void sum_ValueChanged(object sender, EventArgs e)
+        {
+            NumericUpDown answer = sender as NumericUpDown;
+            //var answer = ((NumericUpDown)sender).Value;
 
+            if (answer.Value == sum.Value)
+            {
+                SoundPlayer player = new System.Media.SoundPlayer(@"c:\Windows\Media\chimes.wav");
+                player.Play();
+            }
+        }
+
+        private void difference_ValueChanged(object sender, EventArgs e)
+        {
+            NumericUpDown answer = sender as NumericUpDown;
+            if (answer.Value == difference.Value)
+            {
+                SoundPlayer player = new System.Media.SoundPlayer(@"c:\Windows\Media\chimes.wav");
+                player.Play();
+            }
+        }
+
+        private void product_ValueChanged(object sender, EventArgs e)
+        {
+            NumericUpDown answer = sender as NumericUpDown;
+            if (answer.Value == product.Value)
+            {
+                SoundPlayer player = new System.Media.SoundPlayer(@"c:\Windows\Media\chimes.wav");
+                player.Play();
+            }
+        }
+
+        private void quotient_ValueChanged(object sender, EventArgs e)
+        {
+            NumericUpDown answer = sender as NumericUpDown;
+            if (answer.Value == quotient.Value)
+            {
+                SoundPlayer player = new System.Media.SoundPlayer(@"c:\Windows\Media\chimes.wav");
+                player.Play();
+            }
+        }
     }
 }
