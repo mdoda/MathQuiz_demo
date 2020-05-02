@@ -113,7 +113,8 @@ namespace MathQuiz_demo
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(CheckTheAnswer())
+            currentDate.Text = DateTime.Now.ToString("dd MMMM yyyy");
+            if (CheckTheAnswer())
             {
                 // If CheckTheAnswer() returns true, then the user 
                 // got the answer right. Stop the timer  
@@ -179,10 +180,9 @@ namespace MathQuiz_demo
 
         private void sum_ValueChanged(object sender, EventArgs e)
         {
-            NumericUpDown answer = sender as NumericUpDown;
-            //var answer = ((NumericUpDown)sender).Value;
-
-            if (answer.Value == sum.Value)
+            //NumericUpDown answer = sender as NumericUpDown;
+            var answer = ((NumericUpDown)sender).Value;
+            if (addend1 + addend2 == answer)
             {
                 SoundPlayer player = new System.Media.SoundPlayer(@"c:\Windows\Media\chimes.wav");
                 player.Play();
@@ -192,7 +192,7 @@ namespace MathQuiz_demo
         private void difference_ValueChanged(object sender, EventArgs e)
         {
             NumericUpDown answer = sender as NumericUpDown;
-            if (answer.Value == difference.Value)
+            if (minuend - subtrahend == difference.Value)
             {
                 SoundPlayer player = new System.Media.SoundPlayer(@"c:\Windows\Media\chimes.wav");
                 player.Play();
@@ -202,7 +202,7 @@ namespace MathQuiz_demo
         private void product_ValueChanged(object sender, EventArgs e)
         {
             NumericUpDown answer = sender as NumericUpDown;
-            if (answer.Value == product.Value)
+            if (multiplicand * multiplier == product.Value)
             {
                 SoundPlayer player = new System.Media.SoundPlayer(@"c:\Windows\Media\chimes.wav");
                 player.Play();
@@ -212,7 +212,7 @@ namespace MathQuiz_demo
         private void quotient_ValueChanged(object sender, EventArgs e)
         {
             NumericUpDown answer = sender as NumericUpDown;
-            if (answer.Value == quotient.Value)
+            if (dividend / divisor == answer.Value)
             {
                 SoundPlayer player = new System.Media.SoundPlayer(@"c:\Windows\Media\chimes.wav");
                 player.Play();
