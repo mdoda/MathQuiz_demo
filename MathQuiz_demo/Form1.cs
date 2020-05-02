@@ -166,6 +166,7 @@ namespace MathQuiz_demo
                 return false;
         }
 
+        
         private void answer_Enter(object sender, EventArgs e)
         {
             // Select the whole answer in the NumericUpDown control.
@@ -178,6 +179,9 @@ namespace MathQuiz_demo
             }
         }
 
+        /// <summary>
+        /// Plays sound when the answer of the sum is correct
+        /// </summary>
         private void sum_ValueChanged(object sender, EventArgs e)
         {
             //NumericUpDown answer = sender as NumericUpDown;
@@ -189,6 +193,9 @@ namespace MathQuiz_demo
             }
         }
 
+        /// <summary>
+        /// Plays sound when the answer of the difference is correct
+        /// </summary>
         private void difference_ValueChanged(object sender, EventArgs e)
         {
             NumericUpDown answer = sender as NumericUpDown;
@@ -199,6 +206,9 @@ namespace MathQuiz_demo
             }
         }
 
+        /// <summary>
+        /// Plays sound when the answer of the product is correct
+        /// </summary>
         private void product_ValueChanged(object sender, EventArgs e)
         {
             NumericUpDown answer = sender as NumericUpDown;
@@ -209,6 +219,9 @@ namespace MathQuiz_demo
             }
         }
 
+        /// <summary>
+        /// Plays sound when the answer of the quotient is correct
+        /// </summary>
         private void quotient_ValueChanged(object sender, EventArgs e)
         {
             NumericUpDown answer = sender as NumericUpDown;
